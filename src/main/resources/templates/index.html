@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login | StarFilms</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">      
+        <style>
+            body{
+                background-color: whitesmoke;
+            }
+            #user-in{
+                text-align: center; margin-left: 265px;
+            }
+            #col{
+                background-color: white; border-radius:50px; width: 600px;padding: 8px; 
+            }
+            #login-head{
+                text-align: center; background-color: rgb(34,34,34); 
+                color: whitesmoke; border-radius: 55px;
+                padding: 1px; padding-top: 2px; width: 100%;
+            }
+
+        </style>    
+    </head>
+    <body>
+        <div class="container">               
+            <div class="row" style="text-align: center">
+                <div class="col-md-12">
+                    <h1>Star<span class="glyphicon glyphicon-film w3-text-blue"></span>Films</h1>
+                </div>
+            </div>
+            <div class="row" id="user-in">
+                <div class="col-md-12" id="col">
+                    <div id="login-head">
+                        <h4>LOGIN</h4>
+                    </div>
+                    <form action="efetualogin" method="post">
+                        <div class="form-group">
+                            <br><input type="text" class="form-control" name="user" placeholder="Usuário" autocomplete="off" autofocus="true">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="pass" placeholder="Senha" autocomplete="off">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+                </div>      
+            </div>
+        </div>  
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

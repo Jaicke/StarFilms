@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout">
+    <head>
+        <title>Filme | StarFilms</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <style>            
+            body{
+                background-color: whitesmoke;
+            }
+            .container{
+                background-color: white; border-radius: 30px;
+            }
+            #descricao{
+                resize: vertical;
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <nav class="navbar navbar-inverse">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/filme/listar">Star<span class="glyphicon glyphicon-film w3-text-blue"></span>Films</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/filme/listar">Home</a></li>                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/index"><span class="glyphicon glyphicon-user"></span> Sair</a></li>                    
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+
+            <h3>Filme</h3>
+            <form th:object="${filme}" th:action="@{/filme/salvar}" method="post" >              
+
+                <input th:field="*{id}" type="hidden" id="id">
+                <table class="table table-bordeless">
+                    <tr>
+                        <td><label for="titulo">Titulo:</label></td>
+                        <td> <input th:field="*{titulo}" type="text" class="form-control" id="titulo" name="titulo" required="true" autocomplete="off"></td>
+                    </tr>        
+                    <tr>
+                        
+                            <td><label for="descricao">Sinopse:</label></td>                                            
+                            <td><textarea cols="150" rows="5" th:field="*{descricao}" id="descricao" name="descricao" required="true"></textarea></td> 
+                        
+                    </tr>
+                    <tr>
+                        <td><label for="capa">Capa:</label></td>
+                        <td><input type="file" class="form-control" id="capa"></td>
+
+                    </tr>                
+                </table>
+                <br><a href="/filme/listar" class="btn btn-danger">Voltar</a>
+                <button class="btn btn-primary" type="submit">Salvar</button>
+            </form>
+        </div>
+    </body>
+</html>
+
+
+
